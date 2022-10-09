@@ -1,0 +1,21 @@
+version: '3'
+services:
+  postgresql:
+    container_name: postgres
+    image: postgres
+    networks:
+      - net
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: '1234'
+      POSTGRES_USER: 'dbuser'
+    volumes:
+      - data:/var/lib/postgresql/data
+      - /mnt/c/Users/agupt/OneDrive/Desktop/mywork/code/docker/postgresql/my_data:/root
+
+networks:
+  net:
+
+volumes:
+  data:
+    driver: local
