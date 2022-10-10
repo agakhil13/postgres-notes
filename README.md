@@ -155,4 +155,33 @@ SELECT make, SUM(price) FROM car GROUP BY make;
 SELECT make, model, price, price * .10 AS discount, (price - price * .10) AS "final price" FROM car;
 ```
 
+#### Coalesce to handle null value
+```console
+SELECT COALESCE(email, 'Email not provided') FROM person;
+```
 
+#### Current date and time
+```console
+SELECT NOW();
+
+SELECT NOW()::DATE;
+
+SELECT NOW()::TIME;
+```
+
+#### Age function
+```console
+SELECT first_name, date_of_birth, AGE(NOW()::DATE,date_of_birth) FROM person;
+```
+
+#### Delete/Update record from table 
+```console
+DELETE FROM person WHERE id = 2;
+
+UPDATE person SET email = 'tser@te.st' WHERE id = 2;
+```
+
+#### Copy query output to csv
+```console
+\copy (SELECT * FROM person WHERE id = 2) TO '/root/query.csv' DELIMITER ',' CSV HEADER;
+```

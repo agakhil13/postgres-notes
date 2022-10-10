@@ -5,3 +5,4 @@ ls -l
 cd /root
 ls 
 psql -U dbuser
+psql -U dbuser
