@@ -54,7 +54,7 @@ date_of_birth DATE NOT NULL
 
 #### Delete the existing table `person`
 ```console
-DROP DATABASE person;
+DROP TABLE person;
 ```
 
 #### List the available schema
